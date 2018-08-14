@@ -1,0 +1,72 @@
+<html>
+	<head>
+		<meta charset="utf-8" />		
+		<title>homework_3</title>
+	</head>
+	<body>
+		<table width="100%" border="0">
+			<tr>
+				<td width="360">
+					<form method="post" action="http://Enevsoft.net/echo.php" target="result_frame">
+						<fieldset>
+						<legend>Добавяне на нов въпрос</legend>
+							<table border="1" width="100%">
+								<tr>
+									<td>Вашето e-mail</td>
+									<td>
+										<input type="textarea" name="mail" />
+									</td>
+								</tr>
+								<tr>
+									<td>Заглавие на въпроса</td>
+									<td>
+										<input type="textarea" name="about" required="required" />
+									</td>
+								</tr>	
+								<tr>
+									<td>Относно Курсове: </td>
+									<td>
+										<label for="fe1">FE1</label>
+										<input type="checkbox" name="course[1]" value="1" id="fe1" />
+										<label for="fe2">FE2</label>
+										<input type="checkbox" name="course[2]" value="2" id="fe2" />
+										<label for="php1">PHP1</label>
+										<input type="checkbox" name="course[3]" value="3" id="php1" />												
+									</td>
+								</tr>
+								<tr>
+									<td>Искам анонимност?</td>
+									<td>
+										<label for="yes">ДА</label>
+										<input type="radio" name="anonymous" value="1" id="yes" />
+										<label for="no">НЕ</label>	
+										<input type="radio" name="anonymous" value="0" id="no" />
+									</td>
+								</tr>
+								<tr>
+									<td colspan="2" width="100%">Въпрос</td>
+								</tr>
+								<tr>
+									<td colspan="2">
+										<textarea required="required" name="question"></textarea>
+									</td>	
+								</tr>
+								<tr>	
+									<td align="left">
+										<input type="reset" value="Изчисти" />
+									</td>
+									<td align="right">
+										<input type="submit" value="Изпрати" />
+									</td>
+								</tr>	
+							</table>
+						</fieldset>
+					</form>						
+				</td>	
+				<td height="100%">
+					<iframe width="100%" height="100%" border="1" name="result_frame">Your browser do not suport iframe!</iframe>
+				</td>
+			</tr>
+		</table>		
+	</body>
+</html>

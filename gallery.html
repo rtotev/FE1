@@ -1,0 +1,55 @@
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>gallery</title>
+		<style>
+		#basicPic
+		{
+			width:300;
+		}
+		</style>
+	</head>
+	<body>
+		<button type="button" onclick="change('prev');">Prev</button>
+		<button type="button" onclick="change('next');">Next</button>
+		<img id="basicPic" src="http://www.jqueryscript.net/images/jQuery-Ajax-Loading-Overlay-with-Loading-Text-Spinner-Plugin.jpg" alt="No pic" />
+		<script>
+			var pictures = [
+				['cars','http://media.caranddriver.com/images/media/51/25-cars-worth-waiting-for-lp-ford-gt-photo-658253-s-original.jpg'],
+				['movies', 'http://vignette2.wikia.nocookie.net/sawfilms/images/d/da/Iwannaplayagame.jpg/revision/latest?cb=20120227150040'],
+				['cars2', 'https://upload.wikimedia.org/wikipedia/commons/8/8b/Trabbi_601-S_3828.jpg'],
+				['cars3', 'http://cdn3.3dtuning.com/info/GAZ%20Volga%2024%201967%20Sedan/factory/1.jpg']
+			];
+			var picIndex = -1;
+			function change(checkButton)
+			{
+				if(checkButton == 'prev')
+				{
+					if(picIndex > 0)
+					{
+						picIndex--;
+					}
+					else
+					{
+						alert('No Prev');
+					}
+				}
+				else
+				{
+					if(picIndex < (pictures.length - 1))
+					{
+						picIndex++;
+					}
+					else
+					{
+						alert('No Next');
+					}
+				}
+				
+				var newPic = document.getElementById('basicPic');
+				newPic.src = pictures[picIndex][1];
+				newPic.title = pictures[picIndex][0];
+			}
+		</script>
+	</body>
+</html>

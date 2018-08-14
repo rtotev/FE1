@@ -1,0 +1,66 @@
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>Bulgarian Flag</title>
+		<style>
+			.c0, .v0
+			{
+				background-color:white;
+			}
+			.c1, .v1
+			{
+				background-color:green;
+			}
+			.c2, .v2
+			{
+				background-color:red;
+			}
+			.c0, .c1, .c2
+			{
+				width:380px;
+				height:50px;				
+			}
+			.v0, .v1, .v2
+			{
+				width:50px;
+				height:500px;
+			}
+			#place
+			{				
+				background-color:lightblue;
+			}
+		</style>
+	</head>
+	<body>
+		<form method="get">
+			<fieldset>
+				<legend>Bulgaria flag</legend>
+				<button type="button" onclick="horizontal();" value="horizontal">horizontal</button><br />
+				<input type="button" onclick="vertical();" value="vertical" />
+				<br /><br />
+				<div id="place"></div>
+			</fieldset>
+		</form>
+		<script>	
+			function horizontal(){
+				var hFlag = '<table border="1" cellspacing="0" cellpadding="12" style="margin:auto";>';							
+					for(var col=0; col<=2; col++){
+					hFlag += '<tr><td class="c' + (col % 3) + '"></td></tr>';
+					}
+				hFlag += '</table>';
+				document.getElementById('place').innerHTML = hFlag;
+			}
+			
+			function vertical(){
+				var vFlag = '<table border="1" cellspacing="0" cellpadding="12" style="margin:auto";>';			
+					vFlag += '<tr>';
+					for(var col=0; col<=2; col++){
+						vFlag += '<td class="v' + (col % 3) + '"></td>';
+					}
+					vFlag += '</tr>';
+				vFlag += '</table>';
+				document.getElementById('place').innerHTML = vFlag;
+			}
+		</script>
+	</body>
+</html>

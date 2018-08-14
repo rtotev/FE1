@@ -1,0 +1,50 @@
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>Ex13 add row</title>
+	
+	</head>
+	<body>
+		<form method="post">
+			<table border="1px" id="t1">
+			</table>
+		</form>
+		<button onclick="addRow()">Add Row</button>
+		<button onclick="removeRow()">Remove Row</button>
+		
+		<script>
+			/*
+				<tr>
+					<td>Var</td>
+					<td><input type="text" /></td>
+					<td><input type="checkbox" /></td>
+				</tr>
+			*/
+				var i = 1;
+			function addRow() {
+				var newRow = document.createElement('tr');
+				newRow.id = i;
+				newRow.innerHTML+= '<td>'+ i +'</td>';
+				newRow.innerHTML+= '<td><input type="text" /></td>';
+				newRow.innerHTML+= '<td><input type="checkbox" /></td>';
+				i++;
+				document.getElementById('t1').appendChild(newRow);
+			}
+			
+			function removeRow() {
+				var ans = prompt('Delete?', 1);
+				var el = document.getElementById(ans);
+				console.log(el);
+				if(isNaN(el))
+				{
+					document.getElementById('t1').removeChild(document.getElementById(ans));			
+				}
+				else 
+				{
+					alert('Изберете съществуващ ред като въведете цифрата изписана в началото му.');					
+				}
+			}
+			
+		</script>
+	</body>
+</html>

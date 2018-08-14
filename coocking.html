@@ -1,0 +1,124 @@
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>coocking</title>
+		<style>
+			body
+			{
+				background-image: url("taste-background.jpg");		
+				background-attachment: fixed;
+				background-position: center;
+				background-repeat; no-repeat;
+			}	
+			
+			#main
+			{
+				margin: auto;
+				width: 500px;
+				padding-top: 250px;
+			}
+			
+			inputtype[text=text]
+			{
+				width:99%;
+			}
+		</style>
+	</head>
+	<body>	
+		<script>
+			function validate(){
+				var titleValue = document.getElementById('title_field').value;
+				if(titleValue != '')
+				{
+					document.getElementById('my_form').submit();
+				}
+				else
+				{
+					var title = prompt('Vuvedi zaglavie', 'Please insert title') ;
+					 
+					if(title != null)
+					{
+						 document.getElementById('title_field').value = title;
+					}
+					else
+					{
+						console.log(title);
+					}
+				}
+			}
+		</script>		
+		<form method="post"	target="_blank" action="http://EnevSoft.net/echo.php" id="my_form">
+			<div id="main">
+				<div>
+					<input type="text" id="title_field" placeholder="Write title" name="title" />
+				</div>
+				<div>
+					<textarea id="description" name="description">Write description here...</textarea>
+				</div>
+				<div>
+					<input type="button" value="Send" onclick="validate();" />
+				</div>
+				<br />
+				<div>
+					<input type="button" name="add_row" value="Add Row" onclick="addRow();" />
+					<input type="button" name="delete_row" value="Delete Row" onclick="deleteRow();" />
+				</div>
+				<table border="1" id="t1">
+					<thead>
+					<tr>
+							<th>№</th>
+							<th>
+								Продукт
+							</th>
+							<th>
+								Количество
+							</th>
+							<th>
+								Мерна еденица
+							</th>
+							<th>
+								<input type="button" value="+" onclick="addRow();" />
+							</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td id="numberRows"></td>
+							<td>
+								<input type="text" name="product" />
+							</td>
+							<td>
+								<input type="number" value="0" min="0" max="9999" />
+							</td>
+							<td>
+								<select>
+									<option value="kg" >Килограм</option>
+									<option value="gr" >Грам</option>
+									<option value="cup" >Чаена чаша</option>
+									<option value="spoon" >Супена лъжица</option>
+									<option value="pinch" >Щипка</option>
+									<option value="handfull" >Шепа</option>
+								</select>
+							</td>
+							<td>
+								<input type="button" value="-" />
+							</td>
+						</tr>
+					</tbody>		
+				</table>
+				<script>
+					var counter = 1;
+					document.getElementById('numberRows').innerHTML = counter;
+					function addRow(){
+						var add = document.createElement('<tr>');
+						add.id = i;
+						add.innerHTML += '<td>' + i + '</td>;
+						add.innerHTML += '<td><input type="text" name="product" /></td>'						
+						document.getElementById('t1').appendChild('add');						
+					}
+
+				</script>
+			</div>
+		</form>
+	</body>
+</html>

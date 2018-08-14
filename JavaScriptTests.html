@@ -1,0 +1,116 @@
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>JS Full Stress</title>
+		<style>
+			.c0
+			{
+				color:red;
+			}
+			
+			.c1
+			{
+				color:blue;
+			}
+			.table_color0
+			{
+				background-color:yellow;
+			}
+			.table_color1
+			{
+				background-color:black;
+			}
+		</style>
+	</head>
+	<body>
+		<details>
+			<summary>Show 0...9</summary>
+			<script>
+				for(var i=0; i<10; i++){
+					document.write('<br />' + i);
+				}
+			</script>
+		</details>
+		
+		<details>
+			<summary>Show 0...9 as list item</summary>
+			<ul>
+				<script>
+					for(var i=0; i<=9; i++){
+						document.write('<li>' + i + '</li>');
+					}
+				</script>
+			</ul>	
+		</details>
+		<details>
+			<summary>Show 0...9 as list item with color class</summary>
+			<ul>	
+				<script>
+					for(var i=0; i<=9; i++){
+						document.write('<li class="c' + (i%2) + '">' + i + '</li>');
+					}
+				</script>
+			</ul>	
+		</details>
+		<details>
+			<summary>Show 0...9 as nested list with color</summary>
+			<ul>
+				<script>
+					for(var i=0; i<=9; i++){
+						document.write('<li>' + i + '<ol>');
+						for(var j=1; j<=10; j++){						
+						document.write('<li class="c' + (j%2) + '">' + j + '</li>');
+						}
+						document.write('</ol></li>');
+					}
+				</script>	
+			</ul>
+		</details>
+		<br />
+		<details open="open">
+			<summary>Chess bord</summary>
+			<table border="1" cellspacing="0" cellpadding="10">
+				<script>
+					for(var row=0; row<=7; row++){
+						document.write('<tr>');
+						for(var col=0; col<=7; col++){
+							document.write('<td class="table_color' + ((col + row) % 2) + '"></td>');
+						}
+						document.write('</tr>');
+					}
+				</script>
+			</table>		
+		</details>
+		<br />
+		<script>
+			function boldMyName(MyName){
+				return '<b>' + MyName + '</b>';
+			}
+			
+			function printMyBoldName(MyName){
+				document.write(boldMyName(MyName));
+			}
+			
+			document.write(boldMyName('Rosen'));	
+			printMyBoldName('TOTEB');
+		</script>
+		<details open="open">
+			<summary>quote escape examples</summary>
+			<code>
+				<script>
+					document.write('1. it is apostrophe<br />');
+					document.write("2. it is quote<br />");
+
+					// Ex 3 and ex. 4 are the same
+					document.write('3. it\'s apostrophe<br />');
+					document.write("4. it's apostrophe<br />");
+
+					// Ex 5 and ex. 6 are the same, but ex. 5 is better for HTML
+					document.write('5. <input type="checkbox" /><br />');
+					document.write("6. <input type=\"checkbox\" /><br />");
+					//
+				</script>
+			</code>
+		</details>
+	</body>	
+</html>
